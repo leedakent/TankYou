@@ -73,3 +73,6 @@ Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+# Don't upload starter content (move to level folder if used)
+Content/StarterContent/*
