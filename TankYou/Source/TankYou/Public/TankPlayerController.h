@@ -16,6 +16,14 @@ class TANKYOU_API ATankPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 
-public: 
+
+private:
 	ATank* GetControlledTank() const;
+
+	void BeginPlay() override;
+
+	virtual void Tick(float DeltaTime) override;
+
+	//start moving the barrel to crosshair
+	void AimTowardsCrosshair();
 };
