@@ -17,7 +17,7 @@ void ATankPlayerController::AimTowardsCrosshair()
 
 	if (GetSightRayHitLocation(HitLocation))
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Hit Location: %s"), *HitLocation.ToString());
+		//UE_LOG(LogTemp, Warning, TEXT("Hit Location: %s"), *HitLocation.ToString());
 	}
 
 	//Get world location if linetrace through crosshair
@@ -29,7 +29,16 @@ bool ATankPlayerController::GetSightRayHitLocation(FVector & OutHitLocation) con
 {
 	OutHitLocation = FVector(1.0);
 
-	return false;
+	//find crosshair position
+	int32 ViewportSizeX, ViewportSizeY;
+	GetViewportSize(ViewportSizeX, ViewportSizeY);
+
+	auto ScreenLocation = FVector2D(ViewportSizeX * CrossHairXLocation, ViewportSizeY * CrossHairYLocation);
+
+	//de-project the screen position
+
+	//line trace along that direction and see what we hit
+	return true;
 }
 
 
